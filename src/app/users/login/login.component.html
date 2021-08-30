@@ -1,0 +1,70 @@
+<app-signup></app-signup>
+<h1>{{name}}</h1>
+<input type="text" [value]="name"><br><br>
+<img [src] = 'imgurl'><br><br>
+<!--<input type="text" [(ngModel)]="name">-->
+<button  class="btn btn-outline-primary" (click)="onsubmit()">submit</button>
+<br><br>
+
+<input type="text" #box>
+<button (click)="getvalue(box.value)">get value</button>
+<h2>{{currval}}</h2><br>
+
+<!--<h1 *ngIf="show=='yes'; then ifblock else elseblock">
+</h1>
+<ng-template #ifblock>
+    <h1>if block</h1>
+</ng-template>
+<ng-template #elseblock>
+    <h1>else block</h1>
+</ng-template>-->
+
+<!--<ng-template [ngIf]="show=='red'">
+    <h1>red block</h1>
+</ng-template>
+<ng-template [ngIf]="show=='green'">
+    <h1>green block</h1>
+</ng-template>
+<ng-template [ngIf]="show=='blue'">
+    <h1>blue block</h1>
+</ng-template>-->
+
+<div [ngSwitch]="color">
+    <h2 style="color: red;" *ngSwitchCase="'red'">
+         red color
+    </h2>
+    <h2 style="color: green;" *ngSwitchCase="'green'">
+        green color
+   </h2>
+   <h2 style="color: yellow;" *ngSwitchCase="'yellow'">
+    yellow color
+   </h2>
+</div>
+
+<h2 *ngFor="let item of data">
+    {{item}}
+</h2>
+<!--<h3 *ngFor="let val of data1">
+    {{val.fname}}
+    {{val.age}}
+</h3>-->
+<!--<table border="1">
+    <tr>
+        <td>Fname</td>
+        <td>Age</td>
+    </tr>
+    <tr *ngFor="let val of data1">
+       <td>{{val.fname}}</td>
+       <td>{{val.age}}</td>
+    </tr>
+</table>-->
+<br><br>
+<ng-content name="temp"></ng-content>
+<br><br>
+<form #simpleform="ngForm" (ngSubmit)="getUserValue(simpleform.value)" class="px-5">
+    <input type="text" ngModel name="username" placeholder="enter name"><br><br>
+    <input type="text" ngModel name="age" placeholder="enter age"><br><br>
+    <input type="text"  ngModel name="address" placeholder="enter address"><br><br>
+    <button class="btn btn-success">Get User Value</button>
+
+</form>

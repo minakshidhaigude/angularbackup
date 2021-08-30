@@ -1,0 +1,44 @@
+<h3> reactive form </h3>
+<div class="container">
+    <form [formGroup]="userform"  (ngSubmit)="onsubmit()">
+        <div class="form-group">
+            <label for="">First Name:</label>
+            <input type="text"  class="form-control" formControlName="fname">
+        </div>
+        <div class="form-group">
+            <label for="">Last Name:</label>
+            <input type="text"  class="form-control" formControlName="lname" >
+        </div>
+        <div class="form-group">
+            <label for="">Email:</label>
+            <input type="email" class="form-control" formControlName="email" >
+        </div>
+        <div class="form-group">
+            <label for="">Password:</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="form-group">
+            <label for="">Select Course:</label>
+            <select  class="form-control" formControlName="selectcourse">
+              <option value="">Select Course</option>
+              <option *ngFor='let course of courses'  [ngValue]="course">
+                 {{course}}
+              </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Gender:</label>
+            <div>
+                <input  type="radio"  value="male" formControlName="gender">
+                <label for="male">Male</label>
+             </div>
+    
+             <div>
+                <input  type="radio"  value="female"formControlName="gender">
+                <label for="female">Female</label>
+             </div>
+        </div>
+        <button class="btn btn-outline-primary" [disabled]="!userform.valid">Submit</button>
+    </form>
+</div>
+

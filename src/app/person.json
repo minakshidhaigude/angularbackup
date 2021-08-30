@@ -1,0 +1,24 @@
+{
+    "name":"Madhuri",
+    "age": 29,
+    "email":"madhuri@gmail.com",
+
+    "programming":["data science", "java", "c#"],
+    "experience":[
+        {
+            "companyName ":"GOOGLE",
+            "years":3,
+            "location":"Mumbai"
+        },
+        {
+            "companyName ":"GOOGLE",
+            "years":3,
+            "location":"Mumbai"
+        },
+        {
+            "companyName ":"GOOGLE",
+            "years":3,
+            "location":"Mumbai"
+        }
+    ]
+}

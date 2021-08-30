@@ -1,0 +1,22 @@
+<h4>angular httpclient</h4>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>username</th>
+            <th>email</th>
+            <th>address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let data of userdata'>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.address.street}},{{data.address.suite}},{{data.address.city}},{{data.address.zipcode}}</td>
+        </tr>
+    </tbody>
+</table>

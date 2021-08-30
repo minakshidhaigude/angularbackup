@@ -1,0 +1,40 @@
+<h3> template form </h3>
+<div class="container">
+    <form #frm="ngForm" (ngSubmit)="onsubmit(frm)">
+        <div class="form-group">
+            <label for="">First Name:</label>
+            <input type="text" ngModel class="form-control" name="fname" required>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name:</label>
+            <input type="text" ngModel class="form-control" name="lname" required>
+        </div>
+        <div class="form-group">
+            <label for="">Email:</label>
+            <input type="email" ngModel class="form-control" name="email" email required #email="ngModel">
+            <span class="help-bpx" *ngIf="email.touched && !email.valid">Please enter email value</span>
+        </div>
+        <div class="form-group">
+            <label for="">Select Course:</label>
+            <select ngModel class="form-control" name="cors" id="" required>
+              <option value="">Select Course</option>
+              <option *ngFor='let course of courses'  [ngValue]="course">
+                 {{course}}
+              </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Gender:</label>
+            <div>
+                <input  type="radio" ngModel value="male" name="gender" required>
+                <label for="male">Male</label>
+             </div>
+    
+             <div>
+                <input  type="radio" ngModel value="female" name="gender" required>
+                <label for="female">Female</label>
+             </div>
+        </div>
+        <button class="btn btn-outline-primary" [disabled]="!frm.valid">Submit</button>
+    </form>
+</div>

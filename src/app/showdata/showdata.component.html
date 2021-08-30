@@ -1,0 +1,16 @@
+<p>showdata works!</p>
+<table class="table table-stripped">
+    <tr>
+        <th *ngFor="let header of tableheader">{{header}}</th>
+    </tr>
+    <tr *ngFor="let data of stdData ">
+        <td>{{data.fname}}</td>
+        <td>{{data.lname}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.selectcourse}}</td>
+        <td>{{data.gender}}</td>
+        <td>{{data.usrname}}</td>
+        <td><button class="btn btn-outline-success" (click)="UpdateData(data)">Update</button></td>
+        <td><button class="btn btn-outline-danger"(click)="DeleteData(data)">Delete</button></td>
+    </tr>
+</table>
